@@ -1,6 +1,7 @@
 /* =================================================================
-   JOPLIN USERSTYLE - DUAL THEME (ONE DARK / ONE LIGHT) + VAZIRMATN
-   PERFECT RTL, FIXED-WIDTH CONTAINER & SCROLLABLE MERMAID
+   JOPLIN USERSTYLE - COMPLETE PRODUCTION EDITION
+   DUAL THEME (ONE DARK / ONE LIGHT) + VAZIRMATN FONT
+   OBSIDIAN-STYLE MERMAID ENGINE, LABELBKG FIX & FLAWLESS PDF EXPORT
    ================================================================= */
 
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
@@ -294,7 +295,7 @@ body#tinymce tr:nth-child(odd), #rendered-md tr:nth-child(odd) {
 }
 
 /* =================================================================
-   دیاگرام‌های MERMAID (کادر منطبق بر متن + اسکرول‌بار تضمینی و بدون فشرده‌سازی)
+   دیاگرام‌های MERMAID (نمایش مانیتور: اسکرول افقی درونی + کادر ثابت)
    ================================================================= */
 
 /* کانتینر اصلی: کادر دقیقاً منطبق بر عرض متن یادداشت می‌ماند */
@@ -306,51 +307,35 @@ body#tinymce div.mermaid,
 body#tinymce pre.mermaid {
     display: block !important;
     text-align: center !important;
-    
-    /* هم‌اندازه با عرض استاندارد متن‌ها */
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    
     margin: 28px 0 !important;
     padding: 24px 18px !important;
     direction: ltr !important;
-    
-    /* فعال‌سازی قطعی اسکرول‌بار افقی */
     overflow-x: auto !important;
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: thin !important;
-    
     background-color: var(--od-mermaid-bg) !important;
     border: 1px solid var(--od-mermaid-border) !important;
     border-radius: 8px !important;
 }
 
-/* المان SVG دیاگرام: مانع از ریز شدن اجزای داخلی می‌شود */
+/* المان SVG: رندر در اندازه طبیعی بدون فشرده شدن اجزای داخلی */
 #rendered-md .mermaid svg,
 #rendered-md div.mermaid svg,
 #rendered-md pre.mermaid svg {
     display: inline-block !important;
     vertical-align: middle !important;
     margin: 0 auto !important;
-    
     height: auto !important;
     max-height: none !important;
-    
-    /* 
-       راز حل مشکل:
-       با اعمال عرض بالا، مرورگر مقدار عرض را به سقف max-width طبیعی که خود Mermaid
-       محاسبه کرده باز می‌کند. در نتیجه دیاگرام‌های عریض به زور کوچک نمی‌شوند 
-       و اسکرول‌بار افقی کادر فوراً ظاهر می‌شود!
-    */
     width: 9999px !important;
-    
-    /* برای چارت‌های باریک عمودی، کف عرضی مناسب حفظ می‌شود */
     min-width: min(100%, 300px);
 }
 
-/* رفع مشکل برش و شکستگی متن داخل باکس‌های نود */
+/* جلوگیری از بریده شدن متون نودها */
 .mermaid foreignObject {
     overflow: visible !important;
 }
@@ -367,7 +352,7 @@ body#tinymce pre.mermaid {
     box-sizing: border-box !important;
 }
 
-/* اعمال فونت وزیرمتن و تنظیم ابعاد فونت‌ها */
+/* فونت و راست‌چین متون داخل گره‌ها */
 .mermaid,
 .mermaid svg,
 .mermaid text,
@@ -396,8 +381,41 @@ body#tinymce pre.mermaid {
     ry: 6px !important;
 }
 
+/* --- رفع باگ لکه خالی و وصله کدر labelBkg در خطوط و لیبل‌ها --- */
+.mermaid .labelBkg,
+.mermaid rect.labelBkg,
+.mermaid span.labelBkg,
+.mermaid .edgeLabel rect {
+    background-color: transparent !important;
+    background: transparent !important;
+    fill: transparent !important;
+    opacity: 0 !important;
+    border: none !important;
+}
+
+.mermaid .edgeLabel:empty,
+.mermaid .edgeLabel:blank,
+.mermaid .edgeLabel:has(span:empty),
+.mermaid .edgeLabel:has(p:empty),
+.mermaid .edgeLabel:has(.labelBkg:only-child) {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.mermaid .edgeLabel {
+    background-color: var(--od-bg) !important;
+    color: var(--od-fg) !important;
+    border-radius: 4px !important;
+    padding: 1px 6px !important;
+}
+
+.mermaid .edgeLabel p,
+.mermaid .edgeLabel span {
+    background-color: transparent !important;
+}
+
 /* =================================================================
-   بهینه‌سازی برای موبایل (صفحات کوچک‌تر از 768px)
+   بهینه‌سازی ریسپانسیو برای موبایل (صفحات کوچک‌تر از 768px)
    ================================================================= */
 @media screen and (max-width: 768px) {
     body#tinymce,
@@ -424,7 +442,7 @@ body#tinymce pre.mermaid {
     }
 }
 
-/* --- استایل اسکرول‌بار اختصاصی و کاملاً واضح --- */
+/* --- استایل اسکرول‌بار اختصاصی و شیک --- */
 ::-webkit-scrollbar {
     width: 8px !important;
     height: 8px !important;
@@ -441,7 +459,6 @@ body#tinymce pre.mermaid {
     background: var(--od-scrollbar-hover) !important;
 }
 
-/* اسکرول‌بار افقی کانتینر Mermaid */
 #rendered-md .mermaid::-webkit-scrollbar,
 div.mermaid::-webkit-scrollbar,
 pre.mermaid::-webkit-scrollbar {
@@ -460,23 +477,73 @@ pre.mermaid::-webkit-scrollbar-thumb {
     border-radius: 4px !important;
 }
 
-/* --- تنظیمات بهینه برای چاپ و خروجی PDF --- */
+/* =================================================================
+   تنظیمات تخصصی برای چاپ و خروجی PDF (رفع تداخل متون و فیت شدن در A4)
+   ================================================================= */
 @media print {
     body, #rendered-md {
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
     }
+
+    /* فشرده‌سازی معقول حاشیه‌ها برای استفاده بهینه از فضای کاغذ */
+    body#tinymce h1, #rendered-md h1 { margin: 14px 0 8px 0 !important; font-size: 1.5rem !important; }
+    body#tinymce h2, #rendered-md h2 { margin: 12px 0 6px 0 !important; font-size: 1.25rem !important; }
+    body#tinymce h3, #rendered-md h3 { margin: 10px 0 6px 0 !important; font-size: 1.1rem !important; }
+    p { margin: 6px 0 10px 0 !important; }
+
+    /* کانتینر نمودار در پرینت */
     #rendered-md .mermaid,
+    #rendered-md div.mermaid,
     #rendered-md pre.mermaid,
-    div.mermaid, .mermaid {
+    body#tinymce .mermaid,
+    body#tinymce div.mermaid,
+    body#tinymce pre.mermaid {
         border: none !important;
         background: transparent !important;
         overflow: visible !important;
-        page-break-inside: avoid !important;
-    }
-    .mermaid svg {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 12px auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        max-height: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        clear: both !important;
+    }
+
+    /* لغو ترفند 9999px و مقیاس‌پذیری متناسب با صفحه A4 */
+    #rendered-md .mermaid svg,
+    #rendered-md div.mermaid svg,
+    #rendered-md pre.mermaid svg,
+    body#tinymce .mermaid svg,
+    body#tinymce div.mermaid svg,
+    body#tinymce pre.mermaid svg {
+        width: auto !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        /* سقف ارتفاع ۲۳۰ میلی‌متر برای جلوگیری از نصف‌شدن باکس‌ها بین صفحات */
+        max-height: 230mm !important;
+        display: block !important;
+        margin: 0 auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* تضمین عدم هم‌پوشانی متون بعدی با نمودار */
+    #rendered-md .mermaid + *,
+    #rendered-md div.mermaid + *,
+    #rendered-md pre.mermaid + * {
+        clear: both !important;
+        margin-top: 20px !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        color: #000000 !important;
     }
 }
