@@ -65,7 +65,7 @@
 4. **Completely restart Joplin** (*File → Quit*, then reopen) to apply the stylesheet.
 
 ### Mobile (Android / iOS)
-Joplin mobile synchronizes your profile styles if you sync your configuration, or you can manually paste the contents into the mobile profile stylesheet.
+Using the Import Local CSS plugin or plugins with similar functionality.
 
 ---
 
