@@ -1,6 +1,6 @@
 /* =================================================================
-   JOPLIN USERSTYLE - ATOM ONE DUAL THEME (LIGHT / DARK)
-   CLEAN LTR TYPOGRAPHY & OBSIDIAN-STYLE SCROLLABLE MERMAID ENGINE
+   JOPLIN USERSTYLE - GLOBAL / LTR EDITION (ATOM ONE DUAL THEME)
+   CLEAN LTR TYPOGRAPHY, OBSIDIAN-STYLE MERMAID & FLAWLESS PDF EXPORT
    ================================================================= */
 
 /* =================================================================
@@ -229,7 +229,7 @@ body#tinymce code,
     font-size: 0.9em !important;
 }
 
-/* Code Blocks (Exclude Mermaid) */
+/* Exclude Mermaid from general pre styling */
 body#tinymce pre:not(.mermaid),
 #rendered-md pre:not(.mermaid) {
     direction: ltr !important;
@@ -285,7 +285,7 @@ body#tinymce tr:nth-child(odd), #rendered-md tr:nth-child(odd) {
 }
 
 /* =================================================================
-   MERMAID DIAGRAMS (OBSIDIAN MODEL: SCROLLABLE & CRISP UNCONSTRAINED)
+   MERMAID DIAGRAMS (SCREEN: OBSIDIAN SCROLL MODEL + FIXED CONTAINER)
    ================================================================= */
 
 /* Outer Container: Keeps the box aligned with note width */
@@ -297,21 +297,16 @@ body#tinymce div.mermaid,
 body#tinymce pre.mermaid {
     display: block !important;
     text-align: center !important;
-    
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    
     margin: 28px 0 !important;
     padding: 24px 18px !important;
     direction: ltr !important;
-    
-    /* Horizontal scrollbar on complex/wide diagrams */
     overflow-x: auto !important;
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: thin !important;
-    
     background-color: var(--od-mermaid-bg) !important;
     border: 1px solid var(--od-mermaid-border) !important;
     border-radius: 8px !important;
@@ -324,17 +319,9 @@ body#tinymce pre.mermaid {
     display: inline-block !important;
     vertical-align: middle !important;
     margin: 0 auto !important;
-    
     height: auto !important;
     max-height: none !important;
-    
-    /* 
-       Forces diagram to render at native uncompressed resolution 
-       matching Mermaid's inline calculated max-width.
-    */
     width: 9999px !important;
-    
-    /* Ensures vertical/narrow flowcharts maintain a comfortable base width */
     min-width: min(100%, 300px);
 }
 
@@ -381,6 +368,39 @@ body#tinymce pre.mermaid {
 .mermaid .node polygon {
     rx: 6px !important;
     ry: 6px !important;
+}
+
+/* --- Fix Empty Label Ghosts (.labelBkg) --- */
+.mermaid .labelBkg,
+.mermaid rect.labelBkg,
+.mermaid span.labelBkg,
+.mermaid .edgeLabel rect {
+    background-color: transparent !important;
+    background: transparent !important;
+    fill: transparent !important;
+    opacity: 0 !important;
+    border: none !important;
+}
+
+.mermaid .edgeLabel:empty,
+.mermaid .edgeLabel:blank,
+.mermaid .edgeLabel:has(span:empty),
+.mermaid .edgeLabel:has(p:empty),
+.mermaid .edgeLabel:has(.labelBkg:only-child) {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.mermaid .edgeLabel {
+    background-color: var(--od-bg) !important;
+    color: var(--od-fg) !important;
+    border-radius: 4px !important;
+    padding: 1px 6px !important;
+}
+
+.mermaid .edgeLabel p,
+.mermaid .edgeLabel span {
+    background-color: transparent !important;
 }
 
 /* =================================================================
@@ -447,23 +467,72 @@ pre.mermaid::-webkit-scrollbar-thumb {
     border-radius: 4px !important;
 }
 
-/* --- Print & PDF Export Optimizations --- */
+/* =================================================================
+   Print & PDF Export Optimizations (Avoid Page Overlaps & Fit A4)
+   ================================================================= */
 @media print {
     body, #rendered-md {
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
     }
+
+    /* Tighten margins for printing paper efficiency */
+    body#tinymce h1, #rendered-md h1 { margin: 14px 0 8px 0 !important; font-size: 1.5rem !important; }
+    body#tinymce h2, #rendered-md h2 { margin: 12px 0 6px 0 !important; font-size: 1.25rem !important; }
+    body#tinymce h3, #rendered-md h3 { margin: 10px 0 6px 0 !important; font-size: 1.1rem !important; }
+    p { margin: 6px 0 10px 0 !important; }
+
+    /* Mermaid container in print */
     #rendered-md .mermaid,
+    #rendered-md div.mermaid,
     #rendered-md pre.mermaid,
-    div.mermaid, .mermaid {
+    body#tinymce .mermaid,
+    body#tinymce div.mermaid,
+    body#tinymce pre.mermaid {
         border: none !important;
         background: transparent !important;
         overflow: visible !important;
-        page-break-inside: avoid !important;
-    }
-    .mermaid svg {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 12px auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        max-height: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        clear: both !important;
+    }
+
+    /* Cancel 9999px hack and scale gracefully to A4 paper height */
+    #rendered-md .mermaid svg,
+    #rendered-md div.mermaid svg,
+    #rendered-md pre.mermaid svg,
+    body#tinymce .mermaid svg,
+    body#tinymce div.mermaid svg,
+    body#tinymce pre.mermaid svg {
+        width: auto !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        max-height: 230mm !important;
+        display: block !important;
+        margin: 0 auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Prevent following text from overlapping with diagrams */
+    #rendered-md .mermaid + *,
+    #rendered-md div.mermaid + *,
+    #rendered-md pre.mermaid + * {
+        clear: both !important;
+        margin-top: 20px !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        color: #000000 !important;
     }
 }
