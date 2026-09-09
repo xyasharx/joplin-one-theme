@@ -531,6 +531,74 @@ body#tinymce pre.mermaid {
   }
 }
 
+/* =================================================================
+   Advanced Polish (Images, Horizontal Rules, Math, TOC & Footnotes)
+   ================================================================= */
+
+/* --- Responsive & Modern Images --- */
+#rendered-md img,
+body#tinymce img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 6px !important;
+  display: block !important;
+  margin: 16px auto !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- Horizontal Rules (---) --- */
+#rendered-md hr,
+body#tinymce hr {
+  border: none !important;
+  height: 2px !important;
+  background-color: var(--od-border) !important;
+  margin: 28px 0 !important;
+  border-radius: 2px !important;
+  opacity: 0.8 !important;
+}
+
+/* --- Math Formulas (KaTeX) with Horizontal Scroll on Mobile --- */
+.katex, .katex-display {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  font-family: KaTeX_Main, Times New Roman, serif !important;
+}
+.katex-display {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 8px 0 !important;
+}
+
+/* --- Table of Contents ([[toc]]) --- */
+#rendered-md .table-of-contents,
+body#tinymce .table-of-contents {
+  background: var(--od-bg-alt) !important;
+  border: 1px solid var(--od-border) !important;
+  border-radius: 6px !important;
+  padding: 14px 20px !important;
+  margin: 20px 0 !important;
+  display: inline-block !important;
+  min-width: min(100%, 280px) !important;
+}
+#rendered-md .table-of-contents ul,
+body#tinymce .table-of-contents ul {
+  margin: 4px 0 !important;
+  padding-left: 1.2em !important;
+  padding-right: 0 !important;
+}
+
+/* --- Footnotes --- */
+#rendered-md .footnotes,
+body#tinymce .footnotes {
+  margin-top: 36px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--od-border) !important;
+  font-size: 0.9em !important;
+  color: var(--od-comment) !important;
+}
+
+
+
 /* --- High-Contrast Custom Scrollbar --- */
 ::-webkit-scrollbar {
   width: 8px !important;
