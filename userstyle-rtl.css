@@ -10,349 +10,344 @@
    پالت رنگی One Light (پیش‌فرض سیستم و تم روشن)
    ================================================================= */
 :root {
-    --od-bg: #fafafa;
-    --od-fg: #383a42;
-    --od-bg-alt: #f0f0f1;
-    --od-border: #d0d0d0;
-    --od-comment: #a0a1a7;
-    
-    --od-h1: #e45649;
-    --od-h2: #4078f2;
-    --od-h3: #50a14f;
-    --od-h4: #a626a4;
-    --od-h5: #0184bc;
-    --od-h6: #986801;
-    
-    --od-link: #4078f2;
-    --od-link-hover: #0184bc;
-    --od-code-bg: #eaeaeb;
-    --od-code-fg: #e45649;
-    --od-pre-bg: #f4f4f5;
-    --od-pre-border: #d8d8d8;
-    
-    --od-table-even: #f4f4f5;
-    --od-table-odd: #fafafa;
-    --od-table-th: #ebebeb;
-    --od-scrollbar-track: #e4e4e6;
-    --od-scrollbar-thumb: #b0b0b4;
-    --od-scrollbar-hover: #8e8e93;
+  --od-bg: #fafafa;
+  --od-fg: #383a42;
+  --od-bg-alt: #f0f0f1;
+  --od-border: #d0d0d0;
+  --od-comment: #a0a1a7;
+  
+  --od-h1: #e45649;
+  --od-h2: #4078f2;
+  --od-h3: #50a14f;
+  --od-h4: #a626a4;
+  --od-h5: #0184bc;
+  --od-h6: #986801;
+  
+  --od-link: #4078f2;
+  --od-link-hover: #0184bc;
+  --od-code-bg: #eaeaeb;
+  --od-code-fg: #e45649;
+  --od-pre-bg: #f4f4f5;
+  --od-pre-border: #d8d8d8;
+  
+  --od-table-even: #f4f4f5;
+  --od-table-odd: #fafafa;
+  --od-table-th: #ebebeb;
+  --od-scrollbar-track: #e4e4e6;
+  --od-scrollbar-thumb: #b0b0b4;
+  --od-scrollbar-hover: #8e8e93;
 
-    --od-mermaid-bg: #fbfbfb;
-    --od-mermaid-border: #e4e4e6;
-    --od-selection: rgba(64, 120, 242, 0.2);
-    --od-mark-bg: #ffeaa7;
-    --od-kbd-bg: #eaeaeb;
+  --od-mermaid-bg: #fbfbfb;
+  --od-mermaid-border: #e4e4e6;
+  --od-selection: rgba(64, 120, 242, 0.2);
+  --od-mark-bg: #ffeaa7;
+  --od-kbd-bg: #eaeaeb;
 
-    --mermaid-font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  --mermaid-font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* =================================================================
    پالت رنگی One Dark (فعال در تم تاریک سیستم)
    ================================================================= */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --od-bg: #282c34;
-        --od-fg: #abb2bf;
-        --od-bg-alt: #2c313c;
-        --od-border: #3e4452;
-        --od-comment: #5c6370;
-        
-        --od-h1: #e06c75;
-        --od-h2: #61afef;
-        --od-h3: #98c379;
-        --od-h4: #c678dd;
-        --od-h5: #56b6c2;
-        --od-h6: #d19a66;
-        
-        --od-link: #61afef;
-        --od-link-hover: #56b6c2;
-        --od-code-bg: #3e4452;
-        --od-code-fg: #e06c75;
-        --od-pre-bg: #21252b;
-        --od-pre-border: #181a1f;
-        
-        --od-table-even: #21252b;
-        --od-table-odd: #282c34;
-        --od-table-th: #2c313c;
-        --od-scrollbar-track: #1e2227;
-        --od-scrollbar-thumb: #4b5263;
-        --od-scrollbar-hover: #5c6370;
+  :root {
+    --od-bg: #282c34;
+    --od-fg: #abb2bf;
+    --od-bg-alt: #2c313c;
+    --od-border: #3e4452;
+    --od-comment: #5c6370;
+    
+    --od-h1: #e06c75;
+    --od-h2: #61afef;
+    --od-h3: #98c379;
+    --od-h4: #c678dd;
+    --od-h5: #56b6c2;
+    --od-h6: #d19a66;
+    
+    --od-link: #61afef;
+    --od-link-hover: #56b6c2;
+    --od-code-bg: #3e4452;
+    --od-code-fg: #e06c75;
+    --od-pre-bg: #21252b;
+    --od-pre-border: #181a1f;
+    
+    --od-table-even: #21252b;
+    --od-table-odd: #282c34;
+    --od-table-th: #2c313c;
+    --od-scrollbar-track: #1e2227;
+    --od-scrollbar-thumb: #4b5263;
+    --od-scrollbar-hover: #5c6370;
 
-        --od-mermaid-bg: #21252b;
-        --od-mermaid-border: #333842;
-        --od-selection: rgba(97, 175, 239, 0.25);
-        --od-mark-bg: #634a17;
-        --od-kbd-bg: #353b45;
-    }
+    --od-mermaid-bg: #21252b;
+    --od-mermaid-border: #333842;
+    --od-selection: rgba(97, 175, 239, 0.25);
+    --od-mark-bg: #634a17;
+    --od-kbd-bg: #353b45;
+  }
 }
 
 /* --- تنظیمات عمومی متن و بدنه یادداشت --- */
 ::selection {
-    background-color: var(--od-selection) !important;
+  background-color: var(--od-selection) !important;
 }
 
 body#tinymce,
 body,
 #rendered-md {
-    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-    direction: rtl !important;
-    text-align: right !important;
-    line-height: 1.8 !important;
-    font-size: 16px !important;
-    background-color: var(--od-bg) !important;
-    color: var(--od-fg) !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  direction: rtl !important;
+  text-align: right !important;
+  line-height: 1.8 !important;
+  font-size: 16px !important;
+  background-color: var(--od-bg) !important;
+  color: var(--od-fg) !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* --- سرفصل‌ها (Headings) --- */
+/* --- سرفصل‌ها (Headings) دسکتاپ --- */
 body#tinymce h1, #rendered-md h1 {
-    color: var(--od-h1) !important;
-    background-color: transparent !important;
-    font-size: 1.7rem !important;
-    font-weight: 800 !important;
-    padding: 0 0 8px 0 !important;
-    margin: 32px 0 20px 0 !important;
-    border-bottom: 2px solid var(--od-h1) !important;
-    border-radius: 0 !important;
+  color: var(--od-h1) !important;
+  background-color: transparent !important;
+  font-size: 1.7rem !important;
+  font-weight: 800 !important;
+  padding: 0 0 8px 0 !important;
+  margin: 32px 0 20px 0 !important;
+  border-bottom: 2px solid var(--od-h1) !important;
+  border-radius: 0 !important;
 }
 
 body#tinymce h2, #rendered-md h2 {
-    color: var(--od-h2) !important;
-    font-size: 1.4rem !important;
-    font-weight: 700 !important;
-    border-right: 5px solid var(--od-h2) !important;
-    padding-right: 12px !important;
-    margin: 28px 0 18px 0 !important;
+  color: var(--od-h2) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  border-right: 5px solid var(--od-h2) !important;
+  padding-right: 12px !important;
+  margin: 28px 0 18px 0 !important;
 }
 
 body#tinymce h3, #rendered-md h3 {
-    color: var(--od-h3) !important;
-    font-size: 1.25rem !important;
-    font-weight: 600 !important;
-    margin: 24px 0 14px 0 !important;
+  color: var(--od-h3) !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin: 24px 0 14px 0 !important;
 }
 
 body#tinymce h4, #rendered-md h4 {
-    color: var(--od-h4) !important;
-    font-size: 1.12rem !important;
-    font-weight: 600 !important;
-    margin: 20px 0 12px 0 !important;
+  color: var(--od-h4) !important;
+  font-size: 1.12rem !important;
+  font-weight: 600 !important;
+  margin: 20px 0 12px 0 !important;
 }
 
 body#tinymce h5, #rendered-md h5 {
-    color: var(--od-h5) !important;
-    font-size: 1.05rem !important;
-    font-weight: 600 !important;
-    margin: 18px 0 10px 0 !important;
+  color: var(--od-h5) !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  margin: 18px 0 10px 0 !important;
 }
 
 body#tinymce h6, #rendered-md h6 {
-    color: var(--od-h6) !important;
-    font-size: 1.0rem !important;
-    font-weight: 700 !important;
-    margin: 16px 0 10px 0 !important;
+  color: var(--od-h6) !important;
+  font-size: 1.0rem !important;
+  font-weight: 700 !important;
+  margin: 16px 0 10px 0 !important;
 }
 
 #rendered-md :is(h1, h2, h3, h4, h5, h6) :is(strong, b),
 body#tinymce :is(h1, h2, h3, h4, h5, h6) :is(strong, b) {
-    color: inherit !important;
+  color: inherit !important;
 }
 
 /* --- نقل‌قول (Blockquote) --- */
 body#tinymce blockquote,
 #rendered-md blockquote {
-    border: 0 !important;
-    border-right: 4px solid var(--od-comment) !important;
-    border-left: 0 !important;
-    padding: 10px 16px !important;
-    margin: 18px 0 !important;
-    background: var(--od-bg-alt) !important;
-    border-radius: 4px !important;
-    color: var(--od-fg) !important;
+  border: 0 !important;
+  border-right: 4px solid var(--od-comment) !important;
+  border-left: 0 !important;
+  padding: 10px 16px !important;
+  margin: 18px 0 !important;
+  background: var(--od-bg-alt) !important;
+  border-radius: 4px !important;
+  color: var(--od-fg) !important;
 }
 
 /* --- لیست‌ها و چک‌باکس‌ها --- */
 body#tinymce ul, body#tinymce ol,
 #rendered-md ul, #rendered-md ol {
-    padding-right: 2em !important;
-    padding-left: 0 !important;
+  padding-right: 2em !important;
+  padding-left: 0 !important;
 }
 
 #rendered-md li, body#tinymce li {
-    margin-bottom: 0.45em !important;
+  margin-bottom: 0.45em !important;
 }
 
 .md-checkbox input[type="checkbox"] {
-    margin-left: 8px !important;
-    margin-right: 0 !important;
-    vertical-align: middle !important;
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+  vertical-align: middle !important;
 }
 
 /* --- لینک‌ها --- */
 body#tinymce a, #rendered-md a {
-    color: var(--od-link) !important;
-    text-decoration: none !important;
+  color: var(--od-link) !important;
+  text-decoration: none !important;
 }
 body#tinymce a:hover, #rendered-md a:hover {
-    color: var(--od-link-hover) !important;
-    text-decoration: underline !important;
+  color: var(--od-link-hover) !important;
+  text-decoration: underline !important;
 }
 
 /* --- نشانه‌گذاری و هایلایت متن --- */
 mark {
-    background-color: var(--od-mark-bg) !important;
-    color: var(--od-fg) !important;
-    padding: 1px 4px !important;
-    border-radius: 3px !important;
+  background-color: var(--od-mark-bg) !important;
+  color: var(--od-fg) !important;
+  padding: 1px 4px !important;
+  border-radius: 3px !important;
 }
 
 kbd {
-    background-color: var(--od-kbd-bg) !important;
-    border: 1px solid var(--od-border) !important;
-    color: var(--od-fg) !important;
-    padding: 2px 5px !important;
-    border-radius: 4px !important;
-    font-size: 0.85em !important;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
+  background-color: var(--od-kbd-bg) !important;
+  border: 1px solid var(--od-border) !important;
+  color: var(--od-fg) !important;
+  padding: 2px 5px !important;
+  border-radius: 4px !important;
+  font-size: 0.85em !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
 }
 
 /* --- کدهای درون‌خطی و بلوک‌های کد برنامه‌نویسی --- */
 body#tinymce code,
 #rendered-md code {
-    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
-    background-color: var(--od-code-bg) !important;
-    color: var(--od-code-fg) !important;
-    padding: 2px 6px !important;
-    border-radius: 4px !important;
-    font-size: 0.9em !important;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
+  background-color: var(--od-code-bg) !important;
+  color: var(--od-code-fg) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
 }
 
-/* کدهای چندخطی (استثنا کردن mermaid تا کادر دیاگرام چپ‌چین نشود) */
+/* کدهای چندخطی */
 body#tinymce pre:not(.mermaid),
 #rendered-md pre:not(.mermaid) {
-    direction: ltr !important;
-    text-align: left !important;
-    unicode-bidi: isolate !important;
-    background-color: var(--od-pre-bg) !important;
-    border: 1px solid var(--od-pre-border) !important;
-    border-radius: 6px !important;
-    padding: 14px !important;
-    overflow-x: auto !important;
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+  background-color: var(--od-pre-bg) !important;
+  border: 1px solid var(--od-pre-border) !important;
+  border-radius: 6px !important;
+  padding: 14px !important;
+  overflow-x: auto !important;
 }
 
 body#tinymce pre:not(.mermaid) code,
 #rendered-md pre:not(.mermaid) code {
-    background-color: transparent !important;
-    color: var(--od-fg) !important;
-    padding: 0 !important;
+  background-color: transparent !important;
+  color: var(--od-fg) !important;
+  padding: 0 !important;
 }
 
 /* کدهای درون متن فارسی */
 body#tinymce p code, #rendered-md p code,
 body#tinymce li code, #rendered-md li code {
-    direction: ltr !important;
-    display: inline-block !important;
-    unicode-bidi: embed !important;
-    vertical-align: baseline !important;
+  direction: ltr !important;
+  display: inline-block !important;
+  unicode-bidi: embed !important;
+  vertical-align: baseline !important;
 }
 
-/* --- جداول (کاملاً ریسپانسیو در موبایل) --- */
+/* --- جداول --- */
 body#tinymce table, #rendered-md table {
-    border-collapse: collapse !important;
-    width: 100% !important;
-    margin: 20px 0 !important;
-    border: 1px solid var(--od-border) !important;
-    display: block !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 20px 0 !important;
+  border: 1px solid var(--od-border) !important;
+  display: block !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 body#tinymce th, #rendered-md th {
-    background-color: var(--od-table-th) !important;
-    color: var(--od-link) !important;
-    font-weight: bold !important;
-    border: 1px solid var(--od-border) !important;
-    padding: 8px 12px !important;
-    text-align: right !important;
-    white-space: nowrap !important;
+  background-color: var(--od-table-th) !important;
+  color: var(--od-link) !important;
+  font-weight: bold !important;
+  border: 1px solid var(--od-border) !important;
+  padding: 8px 12px !important;
+  text-align: right !important;
+  white-space: nowrap !important;
 }
 
 body#tinymce td, #rendered-md td {
-    border: 1px solid var(--od-border) !important;
-    padding: 8px 12px !important;
-    text-align: right !important;
+  border: 1px solid var(--od-border) !important;
+  padding: 8px 12px !important;
+  text-align: right !important;
 }
 
 body#tinymce tr:nth-child(even), #rendered-md tr:nth-child(even) {
-    background-color: var(--od-table-even) !important;
+  background-color: var(--od-table-even) !important;
 }
 
 body#tinymce tr:nth-child(odd), #rendered-md tr:nth-child(odd) {
-    background-color: var(--od-table-odd) !important;
+  background-color: var(--od-table-odd) !important;
 }
 
 /* =================================================================
-   دیاگرام‌های MERMAID (نمایش مانیتور: اسکرول افقی درونی + کادر ثابت)
+   دیاگرام‌های MERMAID
    ================================================================= */
-
-/* کانتینر اصلی: کادر دقیقاً منطبق بر عرض متن یادداشت می‌ماند */
 #rendered-md .mermaid,
 #rendered-md div.mermaid,
 #rendered-md pre.mermaid,
 body#tinymce .mermaid,
 body#tinymce div.mermaid,
 body#tinymce pre.mermaid {
-    display: block !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 28px 0 !important;
-    padding: 24px 18px !important;
-    direction: ltr !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: thin !important;
-    background-color: var(--od-mermaid-bg) !important;
-    border: 1px solid var(--od-mermaid-border) !important;
-    border-radius: 8px !important;
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 28px 0 !important;
+  padding: 24px 18px !important;
+  direction: ltr !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  background-color: var(--od-mermaid-bg) !important;
+  border: 1px solid var(--od-mermaid-border) !important;
+  border-radius: 8px !important;
 }
 
-/* المان SVG: رندر در اندازه طبیعی بدون فشرده شدن اجزای داخلی */
 #rendered-md .mermaid svg,
 #rendered-md div.mermaid svg,
 #rendered-md pre.mermaid svg {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    max-height: none !important;
-    width: 9999px !important;
-    min-width: min(100%, 300px);
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 auto !important;
+  height: auto !important;
+  max-height: none !important;
+  width: 9999px !important;
+  min-width: min(100%, 300px);
 }
 
-/* جلوگیری از بریده شدن متون نودها */
 .mermaid foreignObject {
-    overflow: visible !important;
+  overflow: visible !important;
 }
 
 .mermaid foreignObject div {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    white-space: normal !important;
-    word-break: normal !important;
-    line-height: 1.5 !important;
-    text-align: center !important;
-    padding: 3px 6px !important;
-    box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  padding: 3px 6px !important;
+  box-sizing: border-box !important;
 }
 
-/* فونت و راست‌چین متون داخل گره‌ها */
 .mermaid,
 .mermaid svg,
 .mermaid text,
@@ -361,36 +356,34 @@ body#tinymce pre.mermaid {
 .mermaid .nodeLabel,
 .mermaid .edgeLabel,
 .mermaid .cluster-label {
-    font-family: var(--mermaid-font-family) !important;
+  font-family: var(--mermaid-font-family) !important;
 }
 
 .mermaid .nodeLabel,
 .mermaid .edgeLabel,
 .mermaid .label,
 .mermaid text {
-    direction: rtl !important;
-    unicode-bidi: plaintext !important;
-    text-align: center !important;
-    font-size: 13.5px !important;
+  direction: rtl !important;
+  unicode-bidi: plaintext !important;
+  text-align: center !important;
+  font-size: 13.5px !important;
 }
 
-/* گوشه‌های گرد و ملایم برای باکس‌های نمودار */
 .mermaid .node rect,
 .mermaid .node polygon {
-    rx: 6px !important;
-    ry: 6px !important;
+  rx: 6px !important;
+  ry: 6px !important;
 }
 
-/* --- رفع باگ لکه خالی و وصله کدر labelBkg در خطوط و لیبل‌ها --- */
 .mermaid .labelBkg,
 .mermaid rect.labelBkg,
 .mermaid span.labelBkg,
 .mermaid .edgeLabel rect {
-    background-color: transparent !important;
-    background: transparent !important;
-    fill: transparent !important;
-    opacity: 0 !important;
-    border: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  fill: transparent !important;
+  opacity: 0 !important;
+  border: none !important;
 }
 
 .mermaid .edgeLabel:empty,
@@ -398,152 +391,256 @@ body#tinymce pre.mermaid {
 .mermaid .edgeLabel:has(span:empty),
 .mermaid .edgeLabel:has(p:empty),
 .mermaid .edgeLabel:has(.labelBkg:only-child) {
-    display: none !important;
-    visibility: hidden !important;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .mermaid .edgeLabel {
-    background-color: var(--od-bg) !important;
-    color: var(--od-fg) !important;
-    border-radius: 4px !important;
-    padding: 1px 6px !important;
+  background-color: var(--od-bg) !important;
+  color: var(--od-fg) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
 }
 
 .mermaid .edgeLabel p,
 .mermaid .edgeLabel span {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* =================================================================
-   بهینه‌سازی ریسپانسیو برای موبایل (صفحات کوچک‌تر از 768px)
+   بهینه‌سازی استاندارد و عالی برای موبایل (صفحات کوچک‌تر از 768px)
    ================================================================= */
 @media screen and (max-width: 768px) {
-    body#tinymce,
-    body,
-    #rendered-md {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-    }
+  /* تنظیم اندازه متن بدنه متناسب با نمایشگرهای موبایل و خوانایی کامل */
+  body#tinymce,
+  body,
+  #rendered-md {
+    font-size: 16px !important;
+    line-height: 1.85 !important;
+    letter-spacing: -0.01em !important;
+  }
 
-    body#tinymce h1, #rendered-md h1 { font-size: 1.45rem !important; margin: 24px 0 14px 0 !important; }
-    body#tinymce h2, #rendered-md h2 { font-size: 1.25rem !important; margin: 20px 0 12px 0 !important; }
-    body#tinymce h3, #rendered-md h3 { font-size: 1.15rem !important; margin: 18px 0 10px 0 !important; }
+  /* سرفصل‌های دقیق با سلسله‌مراتب بصری استاندارد */
+  body#tinymce h1, #rendered-md h1 {
+    font-size: 1.55rem !important;
+    line-height: 1.4 !important;
+    margin: 22px 0 14px 0 !important;
+    padding-bottom: 6px !important;
+  }
 
-    #rendered-md .mermaid,
-    #rendered-md div.mermaid,
-    #rendered-md pre.mermaid {
-        margin: 16px 0 !important;
-        padding: 14px 8px !important;
-        border-radius: 6px !important;
-    }
+  body#tinymce h2, #rendered-md h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.4 !important;
+    margin: 20px 0 12px 0 !important;
+    padding-right: 10px !important;
+  }
 
-    #rendered-md .mermaid svg {
-        min-width: min(100%, 280px);
-    }
+  body#tinymce h3, #rendered-md h3 {
+    font-size: 1.20rem !important;
+    line-height: 1.45 !important;
+    margin: 18px 0 10px 0 !important;
+  }
+
+  body#tinymce h4, #rendered-md h4 {
+    font-size: 1.10rem !important;
+    line-height: 1.45 !important;
+    margin: 16px 0 8px 0 !important;
+  }
+
+  body#tinymce h5, #rendered-md h5 {
+    font-size: 1.00rem !important;
+    line-height: 1.5 !important;
+    margin: 14px 0 6px 0 !important;
+  }
+
+  body#tinymce h6, #rendered-md h6 {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin: 12px 0 6px 0 !important;
+  }
+
+  /* پاراگراف‌ها */
+  body#tinymce p, #rendered-md p {
+    margin: 0 0 12px 0 !important;
+  }
+
+  /* اصلاح تورفتگی لیست‌ها برای جلوگیری از فشرده‌شدن خطوط در صفحه گوشی */
+  body#tinymce ul, body#tinymce ol,
+  #rendered-md ul, #rendered-md ol {
+    padding-right: 1.3em !important;
+    padding-left: 0 !important;
+    margin: 10px 0 !important;
+  }
+
+  body#tinymce ul ul, body#tinymce ol ol, body#tinymce ul ol, body#tinymce ol ul,
+  #rendered-md ul ul, #rendered-md ol ol, #rendered-md ul ol, #rendered-md ol ul {
+    padding-right: 1.1em !important;
+    padding-left: 0 !important;
+    margin: 6px 0 !important;
+  }
+
+  #rendered-md li, body#tinymce li {
+    margin-bottom: 0.4em !important;
+    line-height: 1.75 !important;
+  }
+
+  /* نقل‌قول شیک و جمع‌وجور */
+  body#tinymce blockquote,
+  #rendered-md blockquote {
+    padding: 8px 12px !important;
+    margin: 14px 0 !important;
+    font-size: 0.95em !important;
+    line-height: 1.75 !important;
+  }
+
+  /* بلوک‌های کد و کدهای درون‌خطی در موبایل */
+  body#tinymce pre:not(.mermaid),
+  #rendered-md pre:not(.mermaid) {
+    font-size: 13.5px !important;
+    padding: 10px 12px !important;
+    margin: 14px 0 !important;
+    line-height: 1.55 !important;
+    border-radius: 5px !important;
+  }
+
+  body#tinymce code,
+  #rendered-md code {
+    font-size: 0.88em !important;
+    padding: 1.5px 5px !important;
+  }
+
+  /* جداول متناسب با لمس در موبایل */
+  body#tinymce table, #rendered-md table {
+    margin: 14px 0 !important;
+    font-size: 13.5px !important;
+  }
+
+  body#tinymce th, #rendered-md th,
+  body#tinymce td, #rendered-md td {
+    padding: 7px 10px !important;
+  }
+
+  /* دیاگرام Mermaid در موبایل */
+  #rendered-md .mermaid,
+  #rendered-md div.mermaid,
+  #rendered-md pre.mermaid,
+  body#tinymce .mermaid,
+  body#tinymce div.mermaid,
+  body#tinymce pre.mermaid {
+    margin: 16px 0 !important;
+    padding: 14px 8px !important;
+    border-radius: 6px !important;
+  }
+
+  #rendered-md .mermaid svg {
+    min-width: min(100%, 280px);
+  }
+
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel,
+  .mermaid .label,
+  .mermaid text {
+    font-size: 12.5px !important;
+  }
 }
 
 /* --- استایل اسکرول‌بار اختصاصی و شیک --- */
 ::-webkit-scrollbar {
-    width: 8px !important;
-    height: 8px !important;
+  width: 8px !important;
+  height: 8px !important;
 }
 ::-webkit-scrollbar-track {
-    background: var(--od-scrollbar-track) !important;
-    border-radius: 4px !important;
+  background: var(--od-scrollbar-track) !important;
+  border-radius: 4px !important;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--od-scrollbar-thumb) !important;
-    border-radius: 4px !important;
+  background: var(--od-scrollbar-thumb) !important;
+  border-radius: 4px !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--od-scrollbar-hover) !important;
+  background: var(--od-scrollbar-hover) !important;
 }
 
 #rendered-md .mermaid::-webkit-scrollbar,
 div.mermaid::-webkit-scrollbar,
 pre.mermaid::-webkit-scrollbar {
-    height: 8px !important;
+  height: 8px !important;
 }
 #rendered-md .mermaid::-webkit-scrollbar-track,
 div.mermaid::-webkit-scrollbar-track,
 pre.mermaid::-webkit-scrollbar-track {
-    background: var(--od-scrollbar-track) !important;
-    border-radius: 4px !important;
+  background: var(--od-scrollbar-track) !important;
+  border-radius: 4px !important;
 }
 #rendered-md .mermaid::-webkit-scrollbar-thumb,
 div.mermaid::-webkit-scrollbar-thumb,
 pre.mermaid::-webkit-scrollbar-thumb {
-    background: var(--od-scrollbar-thumb) !important;
-    border-radius: 4px !important;
+  background: var(--od-scrollbar-thumb) !important;
+  border-radius: 4px !important;
 }
 
 /* =================================================================
-   تنظیمات تخصصی برای چاپ و خروجی PDF (رفع تداخل متون و فیت شدن در A4)
+   تنظیمات تخصصی برای چاپ و خروجی PDF
    ================================================================= */
 @media print {
-    body, #rendered-md {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-    }
+  body, #rendered-md {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
 
-    /* فشرده‌سازی معقول حاشیه‌ها برای استفاده بهینه از فضای کاغذ */
-    body#tinymce h1, #rendered-md h1 { margin: 14px 0 8px 0 !important; font-size: 1.5rem !important; }
-    body#tinymce h2, #rendered-md h2 { margin: 12px 0 6px 0 !important; font-size: 1.25rem !important; }
-    body#tinymce h3, #rendered-md h3 { margin: 10px 0 6px 0 !important; font-size: 1.1rem !important; }
-    p { margin: 6px 0 10px 0 !important; }
+  body#tinymce h1, #rendered-md h1 { margin: 14px 0 8px 0 !important; font-size: 1.5rem !important; }
+  body#tinymce h2, #rendered-md h2 { margin: 12px 0 6px 0 !important; font-size: 1.25rem !important; }
+  body#tinymce h3, #rendered-md h3 { margin: 10px 0 6px 0 !important; font-size: 1.1rem !important; }
+  p { margin: 6px 0 10px 0 !important; }
 
-    /* کانتینر نمودار در پرینت */
-    #rendered-md .mermaid,
-    #rendered-md div.mermaid,
-    #rendered-md pre.mermaid,
-    body#tinymce .mermaid,
-    body#tinymce div.mermaid,
-    body#tinymce pre.mermaid {
-        border: none !important;
-        background: transparent !important;
-        overflow: visible !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        margin: 12px auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        clear: both !important;
-    }
+  #rendered-md .mermaid,
+  #rendered-md div.mermaid,
+  #rendered-md pre.mermaid,
+  body#tinymce .mermaid,
+  body#tinymce div.mermaid,
+  body#tinymce pre.mermaid {
+    border: none !important;
+    background: transparent !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 12px auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    clear: both !important;
+  }
 
-    /* لغو ترفند 9999px و مقیاس‌پذیری متناسب با صفحه A4 */
-    #rendered-md .mermaid svg,
-    #rendered-md div.mermaid svg,
-    #rendered-md pre.mermaid svg,
-    body#tinymce .mermaid svg,
-    body#tinymce div.mermaid svg,
-    body#tinymce pre.mermaid svg {
-        width: auto !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        height: auto !important;
-        /* سقف ارتفاع ۲۳۰ میلی‌متر برای جلوگیری از نصف‌شدن باکس‌ها بین صفحات */
-        max-height: 230mm !important;
-        display: block !important;
-        margin: 0 auto !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-    }
+  #rendered-md .mermaid svg,
+  #rendered-md div.mermaid svg,
+  #rendered-md pre.mermaid svg,
+  body#tinymce .mermaid svg,
+  body#tinymce div.mermaid svg,
+  body#tinymce pre.mermaid svg {
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: 230mm !important;
+    display: block !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
 
-    /* تضمین عدم هم‌پوشانی متون بعدی با نمودار */
-    #rendered-md .mermaid + *,
-    #rendered-md div.mermaid + *,
-    #rendered-md pre.mermaid + * {
-        clear: both !important;
-        margin-top: 20px !important;
-    }
+  #rendered-md .mermaid + *,
+  #rendered-md div.mermaid + *,
+  #rendered-md pre.mermaid + * {
+    clear: both !important;
+    margin-top: 20px !important;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        page-break-after: avoid !important;
-        break-after: avoid !important;
-        color: #000000 !important;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    color: #000000 !important;
+  }
 }
