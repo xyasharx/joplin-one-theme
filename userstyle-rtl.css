@@ -1,14 +1,11 @@
 /* =================================================================
-   JOPLIN USERSTYLE - COMPLETE PRODUCTION EDITION
-   DUAL THEME (ONE DARK / ONE LIGHT) + VAZIRMATN FONT
-   OBSIDIAN-STYLE MERMAID ENGINE, LABELBKG FIX & FLAWLESS PDF EXPORT
+   JOPLIN USERSTYLE - FLAWLESS RTL & MOBILE PRODUCTION THEME
+   PERFECT BULLETS, BORDERS, VAZIRMATN FONT & FULL [dir="ltr"] SUPPORT
    ================================================================= */
 
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
 
-/* =================================================================
-   پالت رنگی One Light (پیش‌فرض سیستم و تم روشن)
-   ================================================================= */
+/* --- پالت One Light (روشن) --- */
 :root {
   --od-bg: #fafafa;
   --od-fg: #383a42;
@@ -46,9 +43,7 @@
   --mermaid-font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
-/* =================================================================
-   پالت رنگی One Dark (فعال در تم تاریک سیستم)
-   ================================================================= */
+/* --- پالت One Dark (تاریک) --- */
 @media (prefers-color-scheme: dark) {
   :root {
     --od-bg: #282c34;
@@ -86,11 +81,11 @@
   }
 }
 
-/* --- تنظیمات عمومی متن و بدنه یادداشت --- */
 ::selection {
   background-color: var(--od-selection) !important;
 }
 
+/* --- تنظیم جهت پایه به صورت RTL کامل و یکپارچه --- */
 body#tinymce,
 body,
 #rendered-md {
@@ -107,16 +102,15 @@ body,
   -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* --- سرفصل‌ها (Headings) دسکتاپ --- */
+/* --- سرفصل‌ها --- */
 body#tinymce h1, #rendered-md h1 {
   color: var(--od-h1) !important;
-  background-color: transparent !important;
   font-size: 1.7rem !important;
   font-weight: 800 !important;
   padding: 0 0 8px 0 !important;
   margin: 32px 0 20px 0 !important;
   border-bottom: 2px solid var(--od-h1) !important;
-  border-radius: 0 !important;
+  text-align: right !important;
 }
 
 body#tinymce h2, #rendered-md h2 {
@@ -124,8 +118,11 @@ body#tinymce h2, #rendered-md h2 {
   font-size: 1.4rem !important;
   font-weight: 700 !important;
   border-right: 5px solid var(--od-h2) !important;
+  border-left: none !important;
   padding-right: 12px !important;
+  padding-left: 0 !important;
   margin: 28px 0 18px 0 !important;
+  text-align: right !important;
 }
 
 body#tinymce h3, #rendered-md h3 {
@@ -133,6 +130,7 @@ body#tinymce h3, #rendered-md h3 {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
   margin: 24px 0 14px 0 !important;
+  text-align: right !important;
 }
 
 body#tinymce h4, #rendered-md h4 {
@@ -140,6 +138,7 @@ body#tinymce h4, #rendered-md h4 {
   font-size: 1.12rem !important;
   font-weight: 600 !important;
   margin: 20px 0 12px 0 !important;
+  text-align: right !important;
 }
 
 body#tinymce h5, #rendered-md h5 {
@@ -147,6 +146,7 @@ body#tinymce h5, #rendered-md h5 {
   font-size: 1.05rem !important;
   font-weight: 600 !important;
   margin: 18px 0 10px 0 !important;
+  text-align: right !important;
 }
 
 body#tinymce h6, #rendered-md h6 {
@@ -154,16 +154,49 @@ body#tinymce h6, #rendered-md h6 {
   font-size: 1.0rem !important;
   font-weight: 700 !important;
   margin: 16px 0 10px 0 !important;
+  text-align: right !important;
 }
 
-#rendered-md :is(h1, h2, h3, h4, h5, h6) :is(strong, b),
-body#tinymce :is(h1, h2, h3, h4, h5, h6) :is(strong, b) {
-  color: inherit !important;
+/* --- حل قطعی مشکل بولت‌ها و لیست‌ها --- */
+body#tinymce ul, body#tinymce ol,
+#rendered-md ul, #rendered-md ol {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 1.6em !important;
+  padding-left: 0 !important;
+  margin: 14px 0 !important;
 }
 
-/* --- نقل‌قول (Blockquote) --- */
+#rendered-md li, body#tinymce li {
+  direction: rtl !important;
+  text-align: right !important;
+  margin-bottom: 0.45em !important;
+  line-height: 1.8 !important;
+}
+
+#rendered-md li::marker, body#tinymce li::marker {
+  color: var(--od-h2) !important;
+  font-weight: bold !important;
+}
+
+#rendered-md ul ul, #rendered-md ol ol, #rendered-md ul ol, #rendered-md ol ul,
+body#tinymce ul ul, body#tinymce ol ol, body#tinymce ul ol, body#tinymce ol ul {
+  padding-right: 1.4em !important;
+  padding-left: 0 !important;
+  margin: 6px 0 !important;
+}
+
+.md-checkbox input[type="checkbox"] {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+  vertical-align: middle !important;
+}
+
+/* --- نقل‌قول‌ها --- */
 body#tinymce blockquote,
 #rendered-md blockquote {
+  direction: rtl !important;
+  text-align: right !important;
   border: 0 !important;
   border-right: 4px solid var(--od-comment) !important;
   border-left: 0 !important;
@@ -174,21 +207,65 @@ body#tinymce blockquote,
   color: var(--od-fg) !important;
 }
 
-/* --- لیست‌ها و چک‌باکس‌ها --- */
-body#tinymce ul, body#tinymce ol,
-#rendered-md ul, #rendered-md ol {
-  padding-right: 2em !important;
-  padding-left: 0 !important;
+/* =================================================================
+   پشتیبانی ۱۰۰٪ تضمینی و قدرتمند از متون انگلیسی با تگ [dir="ltr"]
+   کافیست بنویسید: <div dir="ltr">...</div>
+   ================================================================= */
+#rendered-md [dir="ltr"],
+body#tinymce [dir="ltr"] {
+  direction: ltr !important;
+  text-align: left !important;
 }
 
-#rendered-md li, body#tinymce li {
-  margin-bottom: 0.45em !important;
+#rendered-md [dir="ltr"] :is(h1, h2, h3, h4, h5, h6, p, li, blockquote, dt, dd),
+body#tinymce [dir="ltr"] :is(h1, h2, h3, h4, h5, h6, p, li, blockquote, dt, dd) {
+  direction: ltr !important;
+  text-align: left !important;
 }
 
-.md-checkbox input[type="checkbox"] {
-  margin-left: 8px !important;
-  margin-right: 0 !important;
-  vertical-align: middle !important;
+/* اصلاح نوار کناری H2 در متن انگلیسی */
+#rendered-md [dir="ltr"] h2,
+body#tinymce [dir="ltr"] h2 {
+  border-right: none !important;
+  border-left: 5px solid var(--od-h2) !important;
+  padding-left: 12px !important;
+  padding-right: 0 !important;
+}
+
+/* اصلاح جهت و خط نقل‌قول در متن انگلیسی */
+#rendered-md [dir="ltr"] blockquote,
+body#tinymce [dir="ltr"] blockquote {
+  border-right: none !important;
+  border-left: 4px solid var(--od-comment) !important;
+  padding-left: 16px !important;
+  padding-right: 12px !important;
+}
+
+/* اصلاح کامل بولت‌ها و اعداد ترتیبی لیست‌های انگلیسی */
+#rendered-md [dir="ltr"] :is(ul, ol),
+body#tinymce [dir="ltr"] :is(ul, ol) {
+  direction: ltr !important;
+  text-align: left !important;
+  padding-left: 1.6em !important;
+  padding-right: 0 !important;
+}
+
+#rendered-md [dir="ltr"] li,
+body#tinymce [dir="ltr"] li {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+#rendered-md [dir="ltr"] :is(ul ul, ol ol, ul ol, ol ul),
+body#tinymce [dir="ltr"] :is(ul ul, ol ol, ul ol, ol ul) {
+  padding-left: 1.4em !important;
+  padding-right: 0 !important;
+}
+
+#rendered-md [dir="ltr"] .md-checkbox input[type="checkbox"],
+body#tinymce [dir="ltr"] .md-checkbox input[type="checkbox"] {
+  margin-right: 8px !important;
+  margin-left: 0 !important;
 }
 
 /* --- لینک‌ها --- */
@@ -216,10 +293,9 @@ kbd {
   padding: 2px 5px !important;
   border-radius: 4px !important;
   font-size: 0.85em !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
 }
 
-/* --- کدهای درون‌خطی و بلوک‌های کد برنامه‌نویسی --- */
+/* --- کدهای برنامه‌نویسی (همیشه چپ‌چین و ایزوله) --- */
 body#tinymce code,
 #rendered-md code {
   font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
@@ -230,7 +306,6 @@ body#tinymce code,
   font-size: 0.9em !important;
 }
 
-/* کدهای چندخطی */
 body#tinymce pre:not(.mermaid),
 #rendered-md pre:not(.mermaid) {
   direction: ltr !important;
@@ -250,9 +325,8 @@ body#tinymce pre:not(.mermaid) code,
   padding: 0 !important;
 }
 
-/* کدهای درون متن فارسی */
-body#tinymce p code, #rendered-md p code,
-body#tinymce li code, #rendered-md li code {
+body#tinymce :is(p, li) code,
+#rendered-md :is(p, li) code {
   direction: ltr !important;
   display: inline-block !important;
   unicode-bidi: embed !important;
@@ -408,19 +482,16 @@ body#tinymce pre.mermaid {
 }
 
 /* =================================================================
-   بهینه‌سازی استاندارد و عالی برای موبایل (صفحات کوچک‌تر از 768px)
+   بهینه‌سازی ریسپانسیو و خوانایی استاندارد در موبایل (< 768px)
    ================================================================= */
 @media screen and (max-width: 768px) {
-  /* تنظیم اندازه متن بدنه متناسب با نمایشگرهای موبایل و خوانایی کامل */
   body#tinymce,
   body,
   #rendered-md {
     font-size: 16px !important;
     line-height: 1.85 !important;
-    letter-spacing: -0.01em !important;
   }
 
-  /* سرفصل‌های دقیق با سلسله‌مراتب بصری استاندارد */
   body#tinymce h1, #rendered-md h1 {
     font-size: 1.55rem !important;
     line-height: 1.4 !important;
@@ -433,6 +504,13 @@ body#tinymce pre.mermaid {
     line-height: 1.4 !important;
     margin: 20px 0 12px 0 !important;
     padding-right: 10px !important;
+    padding-left: 0 !important;
+  }
+
+  #rendered-md [dir="ltr"] h2,
+  body#tinymce [dir="ltr"] h2 {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
   }
 
   body#tinymce h3, #rendered-md h3 {
@@ -459,17 +537,21 @@ body#tinymce pre.mermaid {
     margin: 12px 0 6px 0 !important;
   }
 
-  /* پاراگراف‌ها */
   body#tinymce p, #rendered-md p {
     margin: 0 0 12px 0 !important;
   }
 
-  /* اصلاح تورفتگی لیست‌ها برای جلوگیری از فشرده‌شدن خطوط در صفحه گوشی */
   body#tinymce ul, body#tinymce ol,
   #rendered-md ul, #rendered-md ol {
     padding-right: 1.3em !important;
     padding-left: 0 !important;
     margin: 10px 0 !important;
+  }
+
+  #rendered-md [dir="ltr"] :is(ul, ol),
+  body#tinymce [dir="ltr"] :is(ul, ol) {
+    padding-left: 1.3em !important;
+    padding-right: 0 !important;
   }
 
   body#tinymce ul ul, body#tinymce ol ol, body#tinymce ul ol, body#tinymce ol ul,
@@ -479,12 +561,17 @@ body#tinymce pre.mermaid {
     margin: 6px 0 !important;
   }
 
+  #rendered-md [dir="ltr"] :is(ul ul, ol ol, ul ol, ol ul),
+  body#tinymce [dir="ltr"] :is(ul ul, ol ol, ul ol, ol ul) {
+    padding-left: 1.1em !important;
+    padding-right: 0 !important;
+  }
+
   #rendered-md li, body#tinymce li {
     margin-bottom: 0.4em !important;
     line-height: 1.75 !important;
   }
 
-  /* نقل‌قول شیک و جمع‌وجور */
   body#tinymce blockquote,
   #rendered-md blockquote {
     padding: 8px 12px !important;
@@ -493,7 +580,6 @@ body#tinymce pre.mermaid {
     line-height: 1.75 !important;
   }
 
-  /* بلوک‌های کد و کدهای درون‌خطی در موبایل */
   body#tinymce pre:not(.mermaid),
   #rendered-md pre:not(.mermaid) {
     font-size: 13.5px !important;
@@ -509,7 +595,6 @@ body#tinymce pre.mermaid {
     padding: 1.5px 5px !important;
   }
 
-  /* جداول متناسب با لمس در موبایل */
   body#tinymce table, #rendered-md table {
     margin: 14px 0 !important;
     font-size: 13.5px !important;
@@ -520,7 +605,6 @@ body#tinymce pre.mermaid {
     padding: 7px 10px !important;
   }
 
-  /* دیاگرام Mermaid در موبایل */
   #rendered-md .mermaid,
   #rendered-md div.mermaid,
   #rendered-md pre.mermaid,
@@ -544,7 +628,7 @@ body#tinymce pre.mermaid {
   }
 }
 
-/* --- استایل اسکرول‌بار اختصاصی و شیک --- */
+/* --- اسکرول‌بار --- */
 ::-webkit-scrollbar {
   width: 8px !important;
   height: 8px !important;
@@ -561,26 +645,8 @@ body#tinymce pre.mermaid {
   background: var(--od-scrollbar-hover) !important;
 }
 
-#rendered-md .mermaid::-webkit-scrollbar,
-div.mermaid::-webkit-scrollbar,
-pre.mermaid::-webkit-scrollbar {
-  height: 8px !important;
-}
-#rendered-md .mermaid::-webkit-scrollbar-track,
-div.mermaid::-webkit-scrollbar-track,
-pre.mermaid::-webkit-scrollbar-track {
-  background: var(--od-scrollbar-track) !important;
-  border-radius: 4px !important;
-}
-#rendered-md .mermaid::-webkit-scrollbar-thumb,
-div.mermaid::-webkit-scrollbar-thumb,
-pre.mermaid::-webkit-scrollbar-thumb {
-  background: var(--od-scrollbar-thumb) !important;
-  border-radius: 4px !important;
-}
-
 /* =================================================================
-   تنظیمات تخصصی برای چاپ و خروجی PDF
+   تنظیمات چاپ و PDF
    ================================================================= */
 @media print {
   body, #rendered-md {
