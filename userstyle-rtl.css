@@ -295,7 +295,20 @@ kbd {
   font-size: 0.85em !important;
 }
 
-/* --- کدهای برنامه‌نویسی (همیشه چپ‌چین و ایزوله) --- */
+/* --- مخفی‌سازی قطعی تگ‌های سورس داخلی جاپلین (KaTeX, Mermaid و ...) --- */
+body#tinymce .joplin-source,
+#rendered-md .joplin-source,
+pre.joplin-source,
+div.joplin-editable > pre.joplin-source {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* --- کدهای برنامه‌نویسی (همیشه چپ‌چین، ایزوله، دارای اسکرول افقی و بدون شکست خطوط) --- */
 body#tinymce code,
 #rendered-md code {
   font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
@@ -306,8 +319,8 @@ body#tinymce code,
   font-size: 0.9em !important;
 }
 
-body#tinymce pre:not(.mermaid),
-#rendered-md pre:not(.mermaid) {
+body#tinymce pre:not(.mermaid):not(.joplin-source),
+#rendered-md pre:not(.mermaid):not(.joplin-source) {
   direction: ltr !important;
   text-align: left !important;
   unicode-bidi: isolate !important;
@@ -315,33 +328,80 @@ body#tinymce pre:not(.mermaid),
   border: 1px solid var(--od-pre-border) !important;
   border-radius: 6px !important;
   padding: 14px !important;
+  margin: 18px 0 !important;
+
+  /* حفظ دقیق ساختار درختی ASCII و فعال‌سازی اسکرول بدون دستکاری display */
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--od-scrollbar-thumb) var(--od-scrollbar-track) !important;
 }
 
-body#tinymce pre:not(.mermaid) code,
-#rendered-md pre:not(.mermaid) code {
+body#tinymce pre:not(.mermaid):not(.joplin-source) code,
+#rendered-md pre:not(.mermaid):not(.joplin-source) code {
   background-color: transparent !important;
   color: var(--od-fg) !important;
   padding: 0 !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  display: inline-block !important;
+  min-width: 100% !important;
 }
 
+/* کدهای درون‌خطی (Inline Code) داخل پاراگراف‌ها */
 body#tinymce :is(p, li) code,
 #rendered-md :is(p, li) code {
   direction: ltr !important;
   display: inline-block !important;
   unicode-bidi: embed !important;
   vertical-align: baseline !important;
+  white-space: normal !important;
+  word-break: break-word !important;
 }
 
-/* --- جداول --- */
+/* اسکرول‌بار اختصاصی بلاک‌های کد */
+#rendered-md pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar,
+body#tinymce pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar {
+  height: 6px !important;
+}
+#rendered-md pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-track,
+body#tinymce pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-track {
+  background: var(--od-scrollbar-track) !important;
+  border-radius: 4px !important;
+}
+#rendered-md pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-thumb,
+body#tinymce pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-thumb {
+  background: var(--od-scrollbar-thumb) !important;
+  border-radius: 4px !important;
+}
+#rendered-md pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-thumb:hover,
+body#tinymce pre:not(.mermaid):not(.joplin-source)::-webkit-scrollbar-thumb:hover {
+  background: var(--od-scrollbar-hover) !important;
+}
+
+/* --- جداول (اعمال قطعی فونت وزیرمتن و حل مشکل متن سفید در تم روشن) --- */
 body#tinymce table, #rendered-md table {
   border-collapse: collapse !important;
   width: 100% !important;
+  max-width: 100% !important;
   margin: 20px 0 !important;
   border: 1px solid var(--od-border) !important;
   display: block !important;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--od-scrollbar-thumb) var(--od-scrollbar-track) !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  color: var(--od-fg) !important;
 }
 
 body#tinymce th, #rendered-md th {
@@ -352,12 +412,25 @@ body#tinymce th, #rendered-md th {
   padding: 8px 12px !important;
   text-align: right !important;
   white-space: nowrap !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 body#tinymce td, #rendered-md td {
   border: 1px solid var(--od-border) !important;
   padding: 8px 12px !important;
   text-align: right !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  color: var(--od-fg) !important;
+}
+
+#rendered-md table :is(th, td) *,
+body#tinymce table :is(th, td) * {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+#rendered-md table td :not(code):not(pre):not(a),
+body#tinymce table td :not(code):not(pre):not(a) {
+  color: var(--od-fg) !important;
 }
 
 body#tinymce tr:nth-child(even), #rendered-md tr:nth-child(even) {
@@ -366,6 +439,32 @@ body#tinymce tr:nth-child(even), #rendered-md tr:nth-child(even) {
 
 body#tinymce tr:nth-child(odd), #rendered-md tr:nth-child(odd) {
   background-color: var(--od-table-odd) !important;
+}
+
+/* پشتیبانی از جداول داخل تگ انگلیسی */
+#rendered-md [dir="ltr"] table :is(th, td),
+body#tinymce [dir="ltr"] table :is(th, td) {
+  text-align: left !important;
+}
+
+/* استایل اسکرول‌بار جدول */
+#rendered-md table::-webkit-scrollbar,
+body#tinymce table::-webkit-scrollbar {
+  height: 6px !important;
+}
+#rendered-md table::-webkit-scrollbar-track,
+body#tinymce table::-webkit-scrollbar-track {
+  background: var(--od-scrollbar-track) !important;
+  border-radius: 4px !important;
+}
+#rendered-md table::-webkit-scrollbar-thumb,
+body#tinymce table::-webkit-scrollbar-thumb {
+  background: var(--od-scrollbar-thumb) !important;
+  border-radius: 4px !important;
+}
+#rendered-md table::-webkit-scrollbar-thumb:hover,
+body#tinymce table::-webkit-scrollbar-thumb:hover {
+  background: var(--od-scrollbar-hover) !important;
 }
 
 /* =================================================================
@@ -580,13 +679,26 @@ body#tinymce pre.mermaid {
     line-height: 1.75 !important;
   }
 
-  body#tinymce pre:not(.mermaid),
-  #rendered-md pre:not(.mermaid) {
+  /* بلاک‌های کد در موبایل */
+  body#tinymce pre:not(.mermaid):not(.joplin-source),
+  #rendered-md pre:not(.mermaid):not(.joplin-source) {
     font-size: 13.5px !important;
     padding: 10px 12px !important;
     margin: 14px 0 !important;
     line-height: 1.55 !important;
     border-radius: 5px !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body#tinymce pre:not(.mermaid):not(.joplin-source) code,
+  #rendered-md pre:not(.mermaid):not(.joplin-source) code {
+    white-space: pre !important;
+    word-break: normal !important;
   }
 
   body#tinymce code,
@@ -595,14 +707,28 @@ body#tinymce pre.mermaid {
     padding: 1.5px 5px !important;
   }
 
+  /* جداول در موبایل */
   body#tinymce table, #rendered-md table {
     margin: 14px 0 !important;
     font-size: 13.5px !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--od-fg) !important;
   }
 
   body#tinymce th, #rendered-md th,
   body#tinymce td, #rendered-md td {
     padding: 7px 10px !important;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--od-fg) !important;
+  }
+
+  body#tinymce th, #rendered-md th {
+    color: var(--od-link) !important;
   }
 
   #rendered-md .mermaid,
@@ -693,8 +819,7 @@ body#tinymce .footnotes {
   color: var(--od-comment) !important;
 }
 
-
-/* --- اسکرول‌بار --- */
+/* --- اسکرول‌بار کلی صفحه --- */
 ::-webkit-scrollbar {
   width: 8px !important;
   height: 8px !important;
